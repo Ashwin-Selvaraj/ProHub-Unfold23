@@ -4,7 +4,7 @@ const Fs = require('fs').promises;
 
 async function main() {
     try {
-        const sourceCode = await Fs.readFile('PMDAO.sol', 'utf8');
+        const sourceCode = await Fs.readFile('contracts/PMDAO.sol', 'utf8');
         const { abi, bytecode } = compile(sourceCode, 'PMDAO'); // Match the contract name here
         // FOR CREATING A JSON FILE
         const artifact = JSON.stringify({ abi, bytecode }, null, 2);
